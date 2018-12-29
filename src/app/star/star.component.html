@@ -1,0 +1,17 @@
+<!-- need fixing -->
+
+<mat-card
+(click)="getStar()" class="video-card">
+  <div>
+      <a (click)="getStar()">
+          <img mat-card-image [src]="star.star_thumb" alt="">
+      </a>
+      <div class="text-container">
+          <h3>
+              {{star.star_name}}
+            </h3>
+            <p><i class="video icon"></i>{{star.videos_count_all}}</p>
+      </div>
+  </div>
+
+</mat-card>

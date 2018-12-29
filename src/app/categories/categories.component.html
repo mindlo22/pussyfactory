@@ -1,0 +1,23 @@
+
+<h2 mat-dialog-title>Choose Category</h2>
+<div class="row" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2px">
+  <div *ngIf="loading" class="ui loader visible"></div>
+  <br>
+  <br>
+  <div class="card category" fxFlex="20%" *ngFor="let cat of categoriesPerPage">
+    <div class="card-body"
+         [routerLink]="['/videos',cat.category]"
+         (click)="getVideoByCategory(cat.category)">{{cat.category}}</div>
+  </div>
+  <div class="ui horizontal divider" fxFlex="100%">
+    <p class="message header">Get more categories</p>
+  </div>
+  <div class="container" fxLayout="row" fxLayoutAlign="center">
+    <button mat-button class="ui button"
+          (click)="getCategories()">More</button>
+</div>
+</div>
+
+
+
+

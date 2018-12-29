@@ -1,0 +1,24 @@
+<header>
+  <div class="ui primary top fixed pointing menu">
+      <span class="header item">{{title}}</span>
+      <a class="item" routerLinkActive="active" routerLink="/videos">Home</a>
+      <a class="item message" (click)="openCatPage()">categories</a>
+      <a class="item glyphicon glyphicon-star" routerLinkActive="active" routerLink="/stars">
+        <i class="star link icon"></i>
+        stars
+      </a>
+      <!-- <a class="item" routerLink="/tags">Tags</a> -->
+      <span class="menu"></span>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input [(ngModel)]="term" (keyup.enter)="search(term)" type="text" placeholder="Search...">
+            <i class="search link icon"
+            (click)="search(term)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+<!-- style="flex: 1 1 auto;" -->

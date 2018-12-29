@@ -1,0 +1,17 @@
+<mat-card role="group"
+[routerLink]="[ '/videoplayback', video.video_id ]" class="video-card">
+  <img mat-card-image
+        (mouseenter)="changeThumb()"
+        (mouseleave)="stopThumbChange()"
+        (click)="stopThumbChange()"
+       [src]="thumb_url"
+       alt="" class="example-header-image">
+  <div class="content">
+      <p class="text-truncate">{{video.title}}</p>
+  </div>
+  <div class="extra content">
+    <p style="color:rebeccapurple">duration: {{video.duration}}</p>
+  </div>
+  <ngb-rating [readonly]="true" [max]="5" [(rate)]="currentRate"></ngb-rating>
+</mat-card>
+

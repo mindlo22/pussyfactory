@@ -1,0 +1,51 @@
+<!--
+<div class="Aligner">
+    <div *ngIf="loading" class="loading-container ui large visible loader indicating progress"></div>
+  <div class="row video-container" fxLayout="row" fxFlex="60" fxLayoutGap="5px" fxLayoutAlign="center">
+    <app-video  *ngFor="let v of p_videos" [video]="v"></app-video>
+  </div>
+  <div class="col-4" fxLayout="column" fxLayoutAlign="end" fxFlex="2%">
+      <a href="http://www.pornhub.com?utm_source=paid&utm_medium=hubtraffic&utm_campaign=hubtraffic_mindlo" id="rt_aff_banner_511" border="0" target="_blank"><img alt="Free porn videos" border="0" src="https://www.hubtraffic.com/_affiliate/banners/1543859987.png"/></a>
+  </div>
+</div>
+<div class="row" fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="column" fxFlex="80%">
+    <button mat-raised-button
+          fxFlexAlign="center"
+          (click)="getNextPage()">more</button>
+  </div>
+</div>
+ -->
+
+<div fxLayout="row" class="main">
+  <div class="banner-container" fxLayout="row" fxFlex="20%">
+    <div fxLayout="column">
+        <a href="http://www.pornhub.com?utm_source=paid&utm_medium=hubtraffic&utm_campaign=hubtraffic_mindlo" id="rt_aff_banner_511" border="0" target="_blank"><img alt="Free porn videos" border="0" src="https://www.hubtraffic.com/_affiliate/banners/1543859987.png"/></a>
+    </div>
+  </div>
+  <div class="row video-container" fxLayout="row" fxFlex="65%" fxLayoutAlign="center start">
+      <div class="row" fxLayout="row" fxFlex="80%" fxLayoutGap="5px" fxLayoutAlign="center start">
+          <app-video  *ngFor="let v of p_videos" [video]="v"></app-video>
+    </div>
+  </div>
+
+  <!-- <div fxLayout="row" fxFlex="10%">
+    <div fxLayout="column">
+        <a href="http://www.pornhub.com?utm_source=paid&utm_medium=hubtraffic&utm_campaign=hubtraffic_mindlo" id="rt_aff_banner_511" border="0" target="_blank"><img alt="Free porn videos" border="0" src="https://www.hubtraffic.com/_affiliate/banners/1543859987.png"/></a>
+    </div>
+
+  </div> -->
+</div>
+<div class="row page-btns" fxLayout="row" fxLayoutAlign="center">
+
+    <button class="ui labeled icon button"
+      (click)="getPreviousPage()">
+      <i class="pause icon"></i>
+      Previous
+    </button>
+    <button class="ui right labeled icon button"
+      (click)="getNextPage()">
+      <i class="right arrow icon"></i>
+      Next
+    </button>
+</div>

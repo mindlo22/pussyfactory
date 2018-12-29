@@ -1,0 +1,21 @@
+.video-footer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.content{
+  margin: 0;
+  padding: 0;
+}
+
+.main-div{
+  margin-top: 2%;
+}
+iframe{
+  position: absolute;
+
+}
+
+.main {
+  padding-top: 50px;
+}

@@ -1,0 +1,41 @@
+.video-container {
+  margin-top:0.5%;
+  padding: 5px;
+  background-color: rgb(255, 247, 247);
+  border-radius: 7px;
+}
+.banner-container {
+  margin-top:0.5%;
+  padding: 5px;
+  border-radius: 7px;
+}
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-container{
+  background-color: rgb(230, 230, 230);
+  position: absolute;
+  top:50%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.a{
+  background-color: chocolate;
+  position: absolute;
+}
+.b{
+  background-color: cornflowerblue;
+}
+
+.main {
+  padding-top: 50px;
+}
+
+
+.page-btns {
+  margin-bottom: 5%;
+}
