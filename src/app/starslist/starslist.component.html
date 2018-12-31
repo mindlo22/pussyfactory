@@ -1,9 +1,9 @@
 <div *ngIf="loading" class="ui loader visible"></div>
-<div class="container-fluid ma">
-    <div class="row" fxLayout="row" fxLayoutGap="4px" fxLayoutWrap fxLayoutAlign="center">
-        <app-star fxFlex="18%" *ngFor="let star of starsPerPage" [star]="star"></app-star>
+<div class="ma">
+    <div class="row" fxLayout="row wrap"  fxLayoutGap="4px" fxLayout.lt-sm="column" fxLayoutAlign="center">
+        <app-star  *ngFor="let star of starsPerPage" [star]="star"></app-star>
     </div>
-    <div class="row" fxLayout="row" fxLayoutGap="4px" fxLayoutWrap fxLayoutAlign="center">
+    <div class="row page-btns" fxLayout="row" fxLayoutGap="4px" fxLayoutWrap fxLayoutAlign="center">
         <div class="container ui two bottom attached buttons ma" *ngIf="!loading" fxFlex="60%" fxLayoutAlign="center">
             <button class="negative ui button"
                     (click)="previousStars()">

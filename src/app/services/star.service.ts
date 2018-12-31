@@ -9,6 +9,6 @@ import { map } from 'rxjs/operators';
 export class StarService extends DataService {
 
   constructor(http: HttpClient) {
-    super(http,"http://www.pornhub.com/webmasters/stars_detailed");
+    super(http,"https://www.pornhub.com/webmasters/stars_detailed");
    }
 }

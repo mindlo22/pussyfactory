@@ -8,6 +8,6 @@ import { HttpClient } from '@angular/common/http';
 export class TagsService extends DataService {
 
   constructor(http: HttpClient) {
-    super(http,"http://www.pornhub.com/webmasters/tags")
+    super(http,"https://www.pornhub.com/webmasters/tags")
    }
 }

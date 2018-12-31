@@ -13,13 +13,10 @@ export class StarComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    // console.log(this.star)
   }
 
   getStar(){
-    console.log(this.star.star_name)
-    this.router.navigate(['/videos',{stars:this.star.star_name}])
-    // console.log(star);
+    this.router.navigate(['/videos',{stars:this.star.star_name}]);
   }
 
 }

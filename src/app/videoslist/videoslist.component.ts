@@ -1,4 +1,3 @@
-import { category } from './../header/header.component';
 import { AppError } from './../utils/app-error';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
@@ -13,14 +12,13 @@ import { NotFoundError } from '../utils/not-found-error';
   styleUrls: ['./videoslist.component.css']
 })
 export class VideoslistComponent implements OnInit {
-
-  private p_videos;
-  private category;
-  private page = 1;
-  private search_term;
-  private star;
+   p_videos :any[];
+  category:any;
+  page:number = 1;
+  search_term:string;
+  star:string;
   loading: boolean = false;
-  rating = 3;
+  rating:number = 3;
 
   constructor(private videoService: VideoService, private msgBox: MatSnackBar,
      private route: ActivatedRoute, private router:Router,
@@ -39,7 +37,6 @@ export class VideoslistComponent implements OnInit {
       this.category = this.route.snapshot.params['category'];
       this.search_term = this.route.snapshot.params['search'];
       this.star = this.route.snapshot.params['stars'];
-      // this.getVideos();
     },
     (error:Response) => {
       if(error instanceof NotFoundError){
@@ -61,20 +58,20 @@ export class VideoslistComponent implements OnInit {
     }
 
     this.videoService.getByParams(p)
-      .subscribe((res:any) => {this.p_videos = res.videos;console.log(res)},
+      .subscribe((res:any) => {this.p_videos = res.videos;},
       (error:Response) => {
         if(error instanceof NotFoundError)
-          this.msgBox.open("file requested does not exist","alert");
+        this.msgBox.open("requested not found","alert");
 
         else throw error;
       });
   }
 
   getVideosByStars(){
-    let p = {'stars[]':[this.star],
-    "search": this.star,
+
+    let p = {'stars[]':this.star.replace("\ ",'+'),
     "page":this.page,
-    'ordering':'mostviewed'
+    // 'ordering':'mostviewed'
     }
 
     this.videoService.getByParams(p)
@@ -96,7 +93,6 @@ export class VideoslistComponent implements OnInit {
 
       this.videoService.getByParams(p).subscribe((res:any) => {
       this.p_videos = res.videos;
-      console.log(res);
     },
       (error:Response) => {
       if(error instanceof NotFoundError)
@@ -131,25 +127,18 @@ export class VideoslistComponent implements OnInit {
 
   getVideos(){
 
-    console.log(this.category);
-    console.log(this.star);
-    console.log(this.search_term);
     this.videoService.setPage('search/');
 
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     if(this.category != null){
       this.getVideosByCategory();
-      console.log("getting by categories...");
     }
     else if(this.search_term != null){
       this.getVideosBySearchTerm();
-      console.log("getting video by search term...");
     }else if(this.star != null){
       this.getVideosByStars();
-      console.log("getting video by star...");
     }else {
       this.getRecentVideos();
-      console.log("getting recent videos...")
     }
   }
 
@@ -164,7 +153,8 @@ export class VideoslistComponent implements OnInit {
         || routerEvent instanceof NavigationCancel){
 
           this.loading = false;
-          this.getVideos();
+          if(this.search_term != null)
+            this.getVideos();
         }
   }
 

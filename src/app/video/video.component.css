@@ -1,32 +1,15 @@
 
 .img {
-  /* position: relative; */
-  /* width:  180px; */
-  /* height: 120px; */
-  /* background-position: 100% 100%;
-  background-repeat:   no-repeat;
-  background-size:     cover;
-  max-width: 180px */
-
   width: 180px;
 }
-
-/* .card{
-  max-width: 183px;
-  height: 250px;
-  margin: 2px 0 2px;
-  overflow: hidden;
-} */
 div.video-title{
   background-color: aquamarine;
 }
-
 .video-card {
   max-width: 400px;
   width: 200px;
   margin-bottom: 5px
 }
-
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;

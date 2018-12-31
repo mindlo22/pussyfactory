@@ -59,6 +59,5 @@ export class VideoComponent implements OnInit, OnDestroy {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     this.stopThumbChange();
-    console.log("unsubscribed")
   }
 }

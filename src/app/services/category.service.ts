@@ -12,13 +12,10 @@ export class CategoryService extends DataService{
   categoryBroadcast = this.category.asObservable();
 
   constructor(http:HttpClient) {
-    super(http,"http://www.pornhub.com/webmasters/categories");
+    super(http,"https://www.pornhub.com/webmasters/categories");
    }
 
   changeCategory(category){
     this.category.next(category);
   }
-
-
-
 }

@@ -29,8 +29,6 @@ export class StarslistComponent implements OnInit {
         this.stars =
         Array.from(res.stars).map((r:any) => r.star)
         .filter(s => s.gender === "female");
-        console.log("star: ");
-        console.log(this.stars);
         this.starsPerPage = this.pagingService.getitemsPerPage(20,this.stars);
         this.loading = false;
       },
@@ -49,9 +47,10 @@ export class StarslistComponent implements OnInit {
     scrollY = 0;
   }
   previousStars(){
+    let page = this.pagingService.pageCount - 2;
     if(this.pagingService.pageCount != 0){
+      this.pagingService.setPageCount(page);
       this.starsPerPage = this.pagingService.getitemsPerPage(20,this.stars);
-      this.pagingService.pageCount--;
     }
   }
 }

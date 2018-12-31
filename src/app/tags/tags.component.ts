@@ -13,10 +13,9 @@ export class TagsComponent implements OnInit {
   constructor(private tagsService: TagsService) { }
 
   ngOnInit() {
-    // this.tagsService.setParams([{id:"list",name:"a"}]);
-    // this.tagsService.getItems().subscribe(
-    //   (res:any) => {this.tags = res.tags; console.log(res)}
-    // );
+   this.tagsService.getItems().subscribe(
+      (res:any) => this.tags = res.tags
+    );
   }
 
 

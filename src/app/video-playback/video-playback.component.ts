@@ -28,13 +28,11 @@ export class VideoPlaybackComponent implements OnInit {
     .data.subscribe(data => {
       this.video = data['video'].video;
 
-      console.log(this.video);
       let s: string =  data['embed'].embed.code;
       this.embed_url = s.split("&quot;", 2);
     },
     (error:Response) => {
       if(error instanceof NotFoundError){
-        console.log("file requested does not exist");
       }else{
         throw error;
       }
@@ -43,12 +41,10 @@ export class VideoPlaybackComponent implements OnInit {
     this.getVideo();
     this.url = this.getUrl();
 
-    console.log("onInit fired");
   }
 
   getVideo(){
     this.video = this.route.snapshot.data['video'].video;
-    console.log(this.video);
   }
 
   getUrl(){
